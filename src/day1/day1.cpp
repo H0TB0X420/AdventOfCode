@@ -1,4 +1,4 @@
-#include "day1/day1.h"
+#include "day1.h"
 
 #include <sstream>
 #include <string>

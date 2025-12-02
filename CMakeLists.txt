@@ -9,7 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # 2. Fixed typo: SOURCE_FIlES -> SOURCE_FILES
 set(SOURCE_FILES
     src/main.cpp
-    src/Day1/day1.cpp
+    src/day1/day1.cpp
+    src/day2/day2.cpp
 )
 
 add_executable(Cpp2025 ${SOURCE_FILES})
