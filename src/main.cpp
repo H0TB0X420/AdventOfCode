@@ -3,6 +3,8 @@
 #include "day1.h"
 #include "day2.h"
 #include "day3.h"
+#include "day4.h"
+#include "day5.h"
 
 int main(int argc, char* argv[]) {
     /*
@@ -26,7 +28,7 @@ int main(int argc, char* argv[]) {
     std::cout<< "Sum of invalid ids: " <<  result << std::endl;
     std::cout << "Expected: " << 4174379265 << std::endl;
     std::cout <<"Off by: " << std::abs(result - 4174379265) << std::endl;
-    */
+    
     auto lobby = Lobby(argv[1]);
     long result1 = lobby.MaximumJoltage2();
     std::cout<<"Expected: " << 357 << std::endl;
@@ -42,4 +44,21 @@ int main(int argc, char* argv[]) {
     //811111111119 -- 811111111119
     //434234234278 -- 434234234278
     //888911112111 -- 888911112111
+
+    auto printing_department = PrintingDepartment(argv[1]);
+    auto result = printing_department.GetAccessibleRolls();
+    std::cout<< "Sample Expected: " << 43 << std::endl;
+    std::cout<< "Sample Actual: " << result << std::endl;
+    std::cout<< "Diff: " << std::abs(43-result) << std::endl;
+    */
+
+    auto cafeteria = Cafeteria(argv[1]);
+    auto result1 = cafeteria.GetFreshIngredients();
+    std::cout<< "P1 Expected: " << 3 <<std::endl;
+    std::cout<<"P1 Actual: "<<  result1 << std::endl;
+
+    long long result2 = cafeteria.GetTotalFreshIngredientRanges();
+    std::cout<< "P2 Expected: " << 14 <<std::endl;
+    std::cout<<"P2 Actual: "<<  result2 << std::endl; // 352556672963137 | 352556672963116
+
 }
