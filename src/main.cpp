@@ -5,6 +5,7 @@
 #include "day3.h"
 #include "day4.h"
 #include "day5.h"
+#include "day6.h"
 
 int main(int argc, char* argv[]) {
     /*
@@ -50,7 +51,7 @@ int main(int argc, char* argv[]) {
     std::cout<< "Sample Expected: " << 43 << std::endl;
     std::cout<< "Sample Actual: " << result << std::endl;
     std::cout<< "Diff: " << std::abs(43-result) << std::endl;
-    */
+    
 
     auto cafeteria = Cafeteria(argv[1]);
     auto result1 = cafeteria.GetFreshIngredients();
@@ -60,5 +61,18 @@ int main(int argc, char* argv[]) {
     long long result2 = cafeteria.GetTotalFreshIngredientRanges();
     std::cout<< "P2 Expected: " << 14 <<std::endl;
     std::cout<<"P2 Actual: "<<  result2 << std::endl; // 352556672963137 | 352556672963116
+    */
 
+    auto trash_compactor = TrashCompactor(argv[1]);
+    long result = trash_compactor.CephalopodMath();
+    std::cout<<"Expected: " << 4277556 << std::endl;
+    std::cout<<"Actual: " << result << std::endl << std::endl;
+
+    trash_compactor.ResetFp();
+    result = trash_compactor.BigCephalopodMath();
+    std::cout<<"Expected: " << 3263827 << std::endl;
+    std::cout<<"Actual: " << result << std::endl; 
+    // 5873191732773 - Too Low
+    // 19515575917 - Way Too Low
+    // 9233969706360
 }
