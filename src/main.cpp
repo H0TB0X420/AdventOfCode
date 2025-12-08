@@ -7,6 +7,7 @@
 #include "day5.h"
 #include "day6.h"
 #include "day7.h"
+#include "day8.h"
 
 int main(int argc, char* argv[]) {
     /*
@@ -73,7 +74,7 @@ int main(int argc, char* argv[]) {
     result = trash_compactor.BigCephalopodMath();
     std::cout<<"Expected: " << 3263827 << std::endl;
     std::cout<<"Actual: " << result << std::endl; 
-    */
+    
     auto lab = Laboratories(argv[1]);
     long result = lab.TachyonManifolds();
     std::cout<< "Expected: " << 21 << std::endl;
@@ -82,4 +83,15 @@ int main(int argc, char* argv[]) {
     result = lab.QuantumTachyonManifolds();
     std::cout<< "Expected: " << 40 << std::endl;
     std::cout << "Actual: " << result << std::endl;
+    */
+    auto playgroundSmall = Playground("./inputs/day8/small.txt");
+    playgroundSmall.ReadFile();
+    long long result = playgroundSmall.ConnectJunctionBoxes(10);
+    std::cout<< "Expected: " << 25272 << std::endl; // p1: 40
+    std::cout<<"Actual: " << result << std::endl;
+
+    auto playgroundTest = Playground("./inputs/day8/test.txt");
+    playgroundTest.ReadFile();
+    long long resultTest = playgroundTest.ConnectJunctionBoxes(1000);
+    std::cout<<"Result: " << resultTest << std::endl;
 }
