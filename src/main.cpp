@@ -8,6 +8,8 @@
 #include "day6.h"
 #include "day7.h"
 #include "day8.h"
+#include "day9.h"
+
 
 int main(int argc, char* argv[]) {
     /*
@@ -83,7 +85,7 @@ int main(int argc, char* argv[]) {
     result = lab.QuantumTachyonManifolds();
     std::cout<< "Expected: " << 40 << std::endl;
     std::cout << "Actual: " << result << std::endl;
-    */
+    
     auto playgroundSmall = Playground("./inputs/day8/small.txt");
     playgroundSmall.ReadFile();
     long long result = playgroundSmall.ConnectJunctionBoxes(10);
@@ -94,4 +96,14 @@ int main(int argc, char* argv[]) {
     playgroundTest.ReadFile();
     long long resultTest = playgroundTest.ConnectJunctionBoxes(1000);
     std::cout<<"Result: " << resultTest << std::endl;
+    */
+    auto movie_theater = MovieTheater("./inputs/day9/small.txt");
+    auto result = movie_theater.MaximumRectangle();
+    std::cout << "Expected: " << 24 << std::endl; // P1 -> 50, P2 -> 24
+    std::cout << "Actual: " << result << std::endl;
+
+    auto movie_theater_test = MovieTheater("./inputs/day9/test.txt");
+    result = movie_theater_test.MaximumRectangle();
+    std::cout << "Result: " << result << std::endl; //P2 too high: 4619863120
+
 }
