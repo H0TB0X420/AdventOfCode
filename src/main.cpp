@@ -9,7 +9,7 @@
 #include "day7.h"
 #include "day8.h"
 #include "day9.h"
-
+#include "day10.h"
 
 int main(int argc, char* argv[]) {
     /*
@@ -96,7 +96,7 @@ int main(int argc, char* argv[]) {
     playgroundTest.ReadFile();
     long long resultTest = playgroundTest.ConnectJunctionBoxes(1000);
     std::cout<<"Result: " << resultTest << std::endl;
-    */
+    
     auto movie_theater = MovieTheater("./inputs/day9/small.txt");
     auto result = movie_theater.MaximumRectangle();
     std::cout << "Expected: " << 24 << std::endl; // P1 -> 50, P2 -> 24
@@ -105,5 +105,23 @@ int main(int argc, char* argv[]) {
     auto movie_theater_test = MovieTheater("./inputs/day9/test.txt");
     result = movie_theater_test.MaximumRectangle();
     std::cout << "Result: " << result << std::endl; //P2 too high: 4619863120
+    */
+
+    Factory factory("./inputs/day10/small.txt");
+    auto result = factory.ResetIndicators();
+    std::cout<< "Expected: " << 7 << std::endl;
+    std::cout<< "Actual: " << result << std::endl;
+
+
+    Factory testfactory("./inputs/day10/test.txt");
+    result = testfactory.ResetIndicators();
+    std::cout<< "Result: " << result << std::endl;
+
+    result = factory.SetJoltages();
+    std::cout<< "Expected: " << 33 << std::endl;
+    std::cout<< "Actual: " << result << std::endl;
+
+    result = testfactory.SetJoltagesFast();
+    std::cout<< "Result: " << result << std::endl;
 
 }
