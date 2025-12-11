@@ -10,6 +10,8 @@
 #include "day8.h"
 #include "day9.h"
 #include "day10.h"
+#include "day11.h"
+
 
 int main(int argc, char* argv[]) {
     /*
@@ -105,7 +107,6 @@ int main(int argc, char* argv[]) {
     auto movie_theater_test = MovieTheater("./inputs/day9/test.txt");
     result = movie_theater_test.MaximumRectangle();
     std::cout << "Result: " << result << std::endl; //P2 too high: 4619863120
-    */
 
     Factory factory("./inputs/day10/small.txt");
     auto result = factory.ResetIndicators();
@@ -123,5 +124,26 @@ int main(int argc, char* argv[]) {
 
     result = testfactory.SetJoltagesFast();
     std::cout<< "Result: " << result << std::endl;
+    */
+    auto reactor = Reactor("./inputs/day11/small.txt");
+    auto result = reactor.FindAllPaths("you", "out");
+    std::cout << "Expected: " << 5 << std::endl;
+    std::cout << "Actual: " << result << std::endl;
+
+    auto testreactor = Reactor("./inputs/day11/test.txt");
+    result = testreactor.FindAllPaths("you", "out");
+    std::cout << "Result: " << result << std::endl << std::endl;
+
+    
+    auto dacfft_reactor = Reactor("./inputs/day11/dacfft.txt");
+    result = dacfft_reactor.FindAllDacFftPaths("svr", false, false);
+    std::cout << "Expected: " << 2 << std::endl;
+    std::cout << "Actual: " << result << std::endl;
+    
+    long long test = testreactor.FindAllDacFftPaths("svr", false, false);
+    // testreactor.ViewGraphs();
+    std::cout << "Result: " << test << std::endl; // P2 too low -> 91708416
+    // Not right: 759274471139838
+    // Too high: 154108069022874777, 
 
 }
