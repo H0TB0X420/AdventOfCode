@@ -15,6 +15,7 @@ set(SOURCE_FILES
     src/day9.cpp
     src/day10.cpp
     src/day11.cpp
+    src/day12.cpp
 )
 
 add_executable(Cpp2025 ${SOURCE_FILES})

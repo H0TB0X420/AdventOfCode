@@ -11,7 +11,7 @@
 #include "day9.h"
 #include "day10.h"
 #include "day11.h"
-
+#include "day12.h"
 
 int main(int argc, char* argv[]) {
     /*
@@ -124,7 +124,7 @@ int main(int argc, char* argv[]) {
 
     result = testfactory.SetJoltagesFast();
     std::cout<< "Result: " << result << std::endl;
-    */
+    
     auto reactor = Reactor("./inputs/day11/small.txt");
     auto result = reactor.FindAllPaths("you", "out");
     std::cout << "Expected: " << 5 << std::endl;
@@ -145,5 +145,15 @@ int main(int argc, char* argv[]) {
     std::cout << "Result: " << test << std::endl; // P2 too low -> 91708416
     // Not right: 759274471139838
     // Too high: 154108069022874777, 
+    */
+    ChristmasTreeFarm ctf = ChristmasTreeFarm("./inputs/day12/small.txt");
+    long long result = ctf.PlacePresents();
 
+    std::cout << "Expected: " << 2 << std::endl;
+    std::cout << "Actual: " << result << std::endl;
+
+    ChristmasTreeFarm test_ctf = ChristmasTreeFarm("./inputs/day12/test.txt");
+    result = test_ctf.PlacePresents();
+    std::cout << "Result: " << result << std::endl;
+    
 }
